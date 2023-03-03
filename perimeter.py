@@ -5,29 +5,29 @@ class Solve():
     #    self.s3 = s3
         
     def rectangle(self, s1, s2, s3):
-        if len(s1) == 0:
-            return (s1 + s3) *2
-        if len(s2) == 0:
-            return (s1 + s3) *2
-        if len(s3) == 0:
-            return (s1 + s2) * 2
+        if s1 != 0 and s3 != 0 and s2 == 0:
+            return (int(s1) + int(s3)) *2
+        if s1 != 0 and s2 != 0 and s3 == 0:
+            return (int(s1) + int(s2)) *2
+        if s3 != 0 and s2 != 0 and s1 == 0:
+            return (int(s2) + int(s3)) * 2
     
     def triangle(self, s1, s2, s3):
-        if (len(s1) and len(s2) and len(s3)) > 0:
-            return (s1 + s2 + s3)
+        if s1 and s2 and s3 != 0:
+            return int(s1) + int(s2) + int(s3)
          
     def square(self, s1, s2, s3):
-        if (len(s1) and len(s2)) == 0:
-            return s3*4
-        if (len(s2) and len(s3)) == 0:
-            return s1 *4
-        if (len(s1) and len(s3)) == 0:
-            return s2 *4
+        if s1 == 0 and s2 == 0:
+            return int(s3)*4
+        if s2 == 0 and s3 == 0:
+            return int(s1) *4
+        if s1 == 0 and s3 == 0:
+            return int(s2) *4
 
-    
-s1= input("First side: ")
-s2= input("Second side: ")
-s3= input("Third side: ")
+default = 0
+s1= input("First side: ") or default
+s2= input("Second side: ") or default
+s3= input("Third side: ") or default
 
 per = Solve()
 
